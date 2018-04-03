@@ -73,22 +73,33 @@
 window.onload = function() {
   
   // Build a system
-  const ui = SwaggerUIBundle({
-    url: "http://petstore.swagger.io/v2/swagger.json",
-    dom_id: '#swagger-ui',
-    deepLinking: true,
-    presets: [
-      SwaggerUIBundle.presets.apis,
-      SwaggerUIStandalonePreset
-    ],
-    plugins: [
-      SwaggerUIBundle.plugins.DownloadUrl
-    ],
-    layout: "StandaloneLayout"
-  })
+    const ui = SwaggerUIBundle({
+      url: 'swagger.yaml',
+      dom_id: '#swagger-ui',
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ],
+      plugins: [
+        SwaggerUIBundle.plugins.DownloadUrl
+      ],
+      layout: 'StandaloneLayout',
+      docExpansion: 'none',
+//      displayOperationId: true,
+      deepLinking: true
+      // filter: true
+    })
 
-  window.ui = ui
-}
+    window.ui = ui
+
+    ui.initOAuth({
+      clientId: '17953450251798098136',
+      clientSecret: '08E9EC6793345759456CB8BAE52615F3',
+      scopeSeparator: ' ',
+      additionalQueryStringParams: {
+        password_type: '1', // raw password
+      }
+    })}
 </script>
 </body>
 

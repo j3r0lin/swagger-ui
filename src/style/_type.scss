@@ -1,21 +1,25 @@
 @mixin text_body($color: $text-body-default-font-color)
 {
-    font-family: 'Open Sans', sans-serif;
-
+    font-family: Circular, Roboto, -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
     color: $color;
 }
 
 @mixin text_code($color: $text-code-default-font-color)
 {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Andale Mono', 'Source Code Pro', monospace;
     font-weight: 600;
-
+    line-height: 1.5;
     color: $color;
 }
 
 @mixin text_headline($color: $text-headline-default-font-color)
 {
-    font-family: 'Titillium Web', sans-serif;
-
+    font-family: Circular, Roboto, -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
     color: $color;
+}
+
+code {
+  @include text-code()
 }

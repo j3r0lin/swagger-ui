@@ -145,7 +145,7 @@ export const authorizeRequest = ( data ) => ( { fn, getConfigs, authActions, err
   let fetchUrl = url
 
   for (let key in additionalQueryStringParams) {
-    url += "&" + key + "=" + encodeURIComponent(additionalQueryStringParams[key])
+    query[key] = encodeURIComponent(additionalQueryStringParams[key])
   }
 
   let _headers = Object.assign({
